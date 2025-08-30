@@ -23,13 +23,18 @@ public class BubbleSort {
     //function to sort the array using bubble sort
     public static void bubbleSort(int[] arr, int n){
         for(int i=n-1; i>=1; i--){
+            boolean swapped = false;
             for(int j=0; j<i; j++){
                 if(arr[j]>arr[j+1]){
                     //swaping
                     int temp = arr[j];
                     arr[j]  = arr[j+1];
                     arr[j+1] = temp;
+                    swapped = true;
                 }
+            }
+            if(!swapped){
+                break;
             }
         }
     }
